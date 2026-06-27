@@ -4,7 +4,6 @@ import { useParams } from 'next/navigation';
 import { QRCodeSVG } from 'qrcode.react';
 import { useEffect, useState } from 'react';
 
-// 固定的云端生产环境网址（自动适应你的Vercel部署）
 const BASE_URL = typeof window !== 'undefined' ? window.location.origin : '';
 
 interface ManualSection {
@@ -46,8 +45,6 @@ export default function ArticlePage() {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(false);
-    // 确保数据存在时才激活
     if (id && manualData[id]) {
       setMounted(true);
     }
@@ -67,7 +64,6 @@ export default function ArticlePage() {
 
   return (
     <div style={{ display: 'block', width: '100%', minHeight: '100vh', backgroundColor: '#f4f6f8', padding: '20px 15px', boxSizing: 'border-box', fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif' }}>
-      {/* 手机内容卡片 */}
       <div style={{ display: 'block', maxWidth: '600px', margin: '0 auto 30px auto', backgroundColor: '#ffffff', borderRadius: '16px', boxShadow: '0 4px 16px rgba(0,0,0,0.06)', padding: '25px 20px', boxSizing: 'border-box' }}>
         <div style={{ display: 'block', fontSize: '13px', color: '#007aff', fontWeight: '600', marginBottom: '8px', letterSpacing: '0.5px' }}>{data.chapter}</div>
         <h1 style={{ display: 'block', fontSize: '22px', color: '#1c1c1e', margin: '0 0 6px 0', fontWeight: '700', lineHeight: '1.3' }}>{data.title}</h1>
@@ -93,7 +89,6 @@ export default function ArticlePage() {
         </div>
       </div>
 
-      {/* 底部动态二维码绘制区域（仅电脑端可见，手机端不显眼） */}
       {mounted && (
         <div style={{ display: 'block', maxWidth: '600px', margin: '0 auto', backgroundColor: '#ffffff', borderRadius: '16px', padding: '20px', textAlign: 'center', boxShadow: '0 2px 8px rgba(0,0,0,0.04)', boxSizing: 'border-box' }}>
           <p style={{ fontSize: '13px', color: '#8e8e93', margin: '0 0 12px 0' }}>💡 临床打印专用：下方为当前章节的专属永久宣教二维码</p>
