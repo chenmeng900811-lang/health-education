@@ -33,7 +33,7 @@ export default function Home() {
           </a>
 
           <a
-            href="./qrcode"
+            href="./tools"
             className="block rounded-2xl bg-slate-100 px-6 py-5 text-xl font-bold text-slate-700"
           >
             👩‍⚕️ 医护人员：进入工具箱 🔒
