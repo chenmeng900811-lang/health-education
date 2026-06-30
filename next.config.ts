@@ -1,10 +1,15 @@
 import type { NextConfig } from "next";
 
+const isProd = process.env.NODE_ENV === "production";
+
 const nextConfig: NextConfig = {
-  output: 'export', // 开启纯静态导出模式
+  output: "export",
   images: {
-    unoptimized: true, // 静态模式下必须关闭图片优化
-  }
+    unoptimized: true,
+  },
+  basePath: isProd ? "/health-education" : "",
+  assetPrefix: isProd ? "/health-education/" : "",
+  trailingSlash: true,
 };
 
 export default nextConfig;

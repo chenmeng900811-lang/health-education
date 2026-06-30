@@ -4,7 +4,7 @@ import React from 'react';
 import { QRCodeSVG } from 'qrcode.react';
 import { healthEducationData } from '../data';
 
-const BASE_URL = 'https://health-education-lyart.vercel.app';
+const BASE_URL = 'https://chenmeng900811-lang.github.io/health-education';
 
 export default function QRCodeCenter() {
   const ids = Object.keys(healthEducationData);
