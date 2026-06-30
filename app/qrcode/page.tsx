@@ -9,7 +9,7 @@ const BASE_URL = 'https://chenmeng900811-lang.github.io/health-education';
 export default function QRCodeCenter() {
   const ids = Object.keys(healthEducationData);
 
-  const getUrl = (id: string) => `${BASE_URL}/?id=${id}`;
+  const getUrl = (id: string) => `${BASE_URL}/read?id=${id}`;
 
   const downloadSVG = (id: string) => {
     const svg = document.getElementById(`qr-${id}`);
